@@ -1,0 +1,196 @@
+% Cover letter using letter.cls
+\documentclass{letter}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{amsfonts}
+\usepackage{appendix}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+\usepackage{bm}
+\usepackage[all]{xy}
+\usepackage{arydshln}
+\usepackage{tikz}
+\usepackage{float} 
+\usepackage{enumerate}
+
+
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\arraystretch}{1.3}
+
+
+
+%you may inactive the following four commands, then it will become appearance of book pages
+
+\setlength{\topmargin}{-0.1in} \setlength{\textheight}{8.3in}
+\setlength{\oddsidemargin}{0.1 in} \setlength{\textwidth}{6.2 in}
+
+%%%%%%%%%
+
+\DeclareMathOperator{\D}{D} 
+%%%%%%%%%%%%%
+
+\newtheorem{fact}{Fact}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{property}{Property}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{conjecture}{Conjecture}
+
+\newtheorem{example}{Example}
+
+\newcommand{\notsim}{{\, \not \sim \,}}
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+
+\newcommand{\F}{\ensuremath{\mathbb F}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\Q}{\ensuremath{\mathbb Q}}
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\C}{\ensuremath{\mathbb C}}
+
+\newcommand{\done}{\hfill $\Box$ }
+\newcommand{\rmap}{\stackrel{\rho}{\leftrightarrow}}
+\newcommand{\mys}{\vspace{0.15in}}
+
+\newcommand{\ebu}{{\bf{e}}}
+\newcommand{\Abu}{{\bf{A}}}
+\newcommand{\Bbu}{{\bf{B}}}
+
+\newcommand{\abu}{{\bf{a}}}
+\newcommand{\abuj}{{\bf{a_j}}}
+\newcommand{\bbu}{{\bf{b}}}
+\newcommand{\vbu}{{\bf{v}}}
+\newcommand{\ubu}{{\bf{u}}}
+\newcommand{\dbu}{{\bf{d}}}
+\newcommand{\tbu}{{\bf{t}}}
+\newcommand{\cbu}{{\bf{c}}}
+\newcommand{\kbu}{{\bf{k}}}
+\newcommand{\hbu}{{\bf{h}}}
+\newcommand{\sbu}{{\bf{s}}}
+\newcommand{\wbu}{{\bf{w}}}
+\newcommand{\xbu}{{\bf{x}}}
+\newcommand{\ybu}{{\bf{y}}}
+\newcommand{\zbu}{{\bf{z}}} 
+\newcommand{\ombu}{{\bm{\omega}}} 
+
+
+\newcommand{\corres}{\leftrightarrow}
+
+\newcommand{\zero}{{\bf{0}}}
+\newcommand{\one}{{\bf{1}}}
+\newcommand{\nodiv}{{\, \not| \,}}
+\newcommand{\notequiv}{{\,\not\equiv\, }}
+
+
+%%%%%%%%%%%%%%
+
+\def\comb#1#2{{#1 \choose #2}}
+\newcommand{\ls}[1]
+    {\dimen0=\fontdimen6\the\font\lineskip=#1\dimen0
+     \advance\lineskip.5\fontdimen5\the\font
+     \advance\lineskip-\dimen0
+     \lineskiplimit=0.9\lineskip
+     \baselineskip=\lineskip
+     \advance\baselineskip\dimen0
+     \normallineskip\lineskip\normallineskiplimit\lineskiplimit
+     \normalbaselineskip\baselineskip
+     \ignorespaces}
+
+\def\stir#1#2{\left\{#1 \atop #2 \right\}}
+\def\dsum#1#2{#1 \atop #2 }
+\def\defn{\stackrel{\triangle}{=}}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font
+% the following commands control the margins:
+\topmargin=-1in    % Make letterhead start about 1 inch from top of page
+\textheight=8in    % text height can be bigger for a longer letter
+\oddsidemargin=0pt % leftmargin is 1 inch
+\textwidth=6.5in   % textwidth of 6.5in leaves 1 inch for right margin
+
+\begin{document}
+
+\signature{Zilong Wang}                  % name for signature
+\longindentation=0pt                     % needed to get closing flush left
+\let\raggedleft\raggedright              % needed to get date flush left
+
+
+
+
+\begin{center}
+{\large  \bf{Responses to Editor's and Reviewers' Comments}} \\
+\vspace{2em}
+{Title: xxx} \\
+\vspace{1em}
+%{Fei Guo, Zilong Wang and Guang Gong} \\
+\end{center}
+
+Dear Associate Editor and Reviewers, 
+
+\noindent We would like to thank the associate editor and the reviewers for giving us constructive comments and suggestions. The letter tries to respond reviewers requested changes and explain our modification.
+
+\vspace{0.1in} \noindent {\bf  Main Comments and the Authors' Response: }
+
+xx
+
+\begin{enumerate}[{1.}]
+\item
+\item
+\end{enumerate}
+
+
+
+\textcolor{blue}{Response: 
+\begin{enumerate}[{1.}]
+\item 
+\item
+\end{enumerate}
+}
+
+
+\vspace{0.1in} \noindent {\bf  Reviewer A's xxx and Authors' Response:}
+\begin{enumerate}[{1.}]
+\item 
+\item
+\end{enumerate}
+
+\textcolor{blue}{Response:
+\begin{enumerate}[{1.}]
+\item 
+\item
+\end{enumerate}
+}
+
+\vspace{0.1in} \noindent {\bf  Reviewer B's xx and Authors' Response:} 
+\begin{enumerate}[{1.}]
+\item  
+\end{enumerate}
+
+\textcolor{blue}{Response: 
+\begin{enumerate}[{1.}]
+\item   
+\end{enumerate}
+} 
+
+\vspace{0.1in} \noindent {\bf  Reviewer C's xx and Authors' Response:} 
+\begin{enumerate}[{1.}]
+\item  
+\end{enumerate}
+
+\textcolor{blue}{Response: 
+\begin{enumerate}[{1.}]
+\item 
+\end{enumerate}
+}
+
+\end{document}
