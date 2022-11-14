@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: GuiwenUWTexSlidesTemplate.aux
+The style file: alpha.bst
+Database file #1: ../references-for-all-guiwen.bib
+Repeated entry---line 613 of file ../references-for-all-guiwen.bib
+ : @inproceedings{bos1989addition
+ :                               ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 846 of file ../references-for-all-guiwen.bib
+ :  
+ :  year={2022}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1729 of file ../references-for-all-guiwen.bib
+ : @inproceedings{suppakitpaisarn2012fastest
+ :                                          ,
+I'm skipping whatever remains of this entry
+You've used 15 entries,
+            2543 wiz_defined-function locations,
+            649 strings with 7007 characters,
+and the built_in function-call counts, 6715 in all, are:
+= -- 704
+> -- 257
+< -- 17
++ -- 90
+- -- 88
+* -- 425
+:= -- 1029
+add.period$ -- 53
+call.type$ -- 15
+change.case$ -- 91
+chr.to.int$ -- 15
+cite$ -- 15
+duplicate$ -- 306
+empty$ -- 517
+format.name$ -- 111
+if$ -- 1455
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 78
+num.names$ -- 45
+pop$ -- 111
+preamble$ -- 1
+purify$ -- 107
+quote$ -- 0
+skip$ -- 259
+stack$ -- 0
+substring$ -- 392
+swap$ -- 94
+text.length$ -- 17
+text.prefix$ -- 8
+top$ -- 0
+type$ -- 116
+warning$ -- 0
+while$ -- 64
+width$ -- 17
+write$ -- 202
+(There were 3 error messages)

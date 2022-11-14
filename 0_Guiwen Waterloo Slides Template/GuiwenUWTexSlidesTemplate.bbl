@@ -1,0 +1,90 @@
+\begin{thebibliography}{BGMW95}
+
+\bibitem[BC89]{bos1989addition}
+Jurjen Bos and Matthijs Coster.
+\newblock Addition chain heuristics.
+\newblock In {\em Conference on the Theory and Application of Cryptology},
+  pages 400--407. Springer, 1989.
+
+\bibitem[BDLO12]{bernstein2012faster}
+Daniel~J Bernstein, Jeroen Doumen, Tanja Lange, and Jan-Jaap Oosterwijk.
+\newblock Faster batch forgery identification.
+\newblock In {\em International Conference on Cryptology in India}, pages
+  454--473. Springer, 2012.
+
+\bibitem[Ber06]{bernstein2006differential}
+Daniel~J Bernstein.
+\newblock Differential addition chains.
+\newblock {\em URL: http://cr. yp. to/ecdh/diffchain-20060219. pdf}, 2006.
+
+\bibitem[BGMW92]{brickell1992fast}
+Ernest~F Brickell, Daniel~M Gordon, Kevin~S McCurley, and David~B Wilson.
+\newblock Fast exponentiation with precomputation.
+\newblock In {\em Workshop on the Theory and Application of of Cryptographic
+  Techniques}, pages 200--207. Springer, 1992.
+
+\bibitem[BGMW95]{brickell1995fast}
+Ernest~F Brickell, Daniel~M Gordon, Kevin~S McCurley, and David~B Wilson.
+\newblock Fast exponentiation with precomputation: algorithms and lower bounds.
+\newblock {\em preprint, Mar}, 27, 1995.
+
+\bibitem[Bro15]{brown2015multi}
+Daniel~R Brown.
+\newblock Multi-dimensional montgomery ladders for elliptic curves, February~17
+  2015.
+\newblock US Patent 8,958,551.
+
+\bibitem[DKS09]{doche2009double}
+Christophe Doche, David~R Kohel, and Francesco Sica.
+\newblock Double-base number system for multi-scalar multiplications.
+\newblock In {\em Annual International Conference on the Theory and
+  Applications of Cryptographic Techniques}, pages 502--517. Springer, 2009.
+
+\bibitem[Knu97]{knuth1997art}
+Donald~E Knuth.
+\newblock {\em The Art of Programming, vol. 2 (3rd ed.), Seminumerical
+  algorithms}.
+\newblock Addison Wesley Longman, 1997.
+
+\bibitem[Mat82]{matula1982basic}
+David~W Matula.
+\newblock Basic digit sets for radix representation.
+\newblock {\em Journal of the ACM (JACM)}, 29(4):1131--1143, 1982.
+
+\bibitem[Mon92]{montgomery1992evaluating}
+Peter~L Montgomery.
+\newblock Evaluating recurrences of form xm+ n= f (xm, xn, xm- n) via lucas
+  chains, 1983.
+\newblock {\em Available at ftp. cwi. nl:/pub/pmontgom/Lucas. ps. gz}, 1992.
+
+\bibitem[Pip76]{pippenger1976evaluation}
+Nicholas Pippenger.
+\newblock On the evaluation of powers and related problems.
+\newblock In {\em 17th Annual Symposium on Foundations of Computer Science
+  (sfcs 1976)}, pages 258--263. IEEE Computer Society, 1976.
+
+\bibitem[Rao15]{rao2015note}
+Srinivasa Rao~Subramanya Rao.
+\newblock A note on schoenmakers algorithm for multi exponentiation.
+\newblock In {\em 2015 12th International Joint Conference on e-Business and
+  Telecommunications (ICETE)}, volume~4, pages 384--391. IEEE, 2015.
+
+\bibitem[SIM12]{suppakitpaisarn2012fastest}
+Vorapong Suppakitpaisarn, Hiroshi Imai, and Edahiro Masato.
+\newblock Fastest multi-scalar multiplication based on optimal double-base
+  chains.
+\newblock In {\em World Congress on Internet Security (WorldCIS-2012)}, pages
+  93--98. IEEE, 2012.
+
+\bibitem[Str64]{straus1964addition}
+Ernst~G Straus.
+\newblock Addition chains of vectors (problem 5125).
+\newblock {\em American Mathematical Monthly}, 70(806-808):16, 1964.
+
+\bibitem[YWLT13]{yu2013joint}
+Wei Yu, Kunpeng Wang, Bao Li, and Song Tian.
+\newblock Joint triple-base number system for multi-scalar multiplication.
+\newblock In {\em International Conference on Information Security Practice and
+  Experience}, pages 160--173. Springer, 2013.
+
+\end{thebibliography}
