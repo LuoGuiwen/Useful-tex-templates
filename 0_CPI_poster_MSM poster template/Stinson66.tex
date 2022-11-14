@@ -1,0 +1,480 @@
+\documentclass[final]{beamer}
+
+%\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+
+\usepackage[orientation=portrait,size=a0,scale=1.6,debug]{beamerposter}                       
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in} % A0 width: 46.8in
+\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.008\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.24\paperwidth} % Width of one column
+%\setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+%\setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.6in} % Reduce the top margin size
+%\usepackage[bottom=0.5in]{geometry} 
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+\usepackage{caption} % No caption number for figures and tables
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes.geometric}
+\usepackage{pgfplots}
+\usetikzlibrary{shapes,arrows,automata}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{fit}
+\usepackage{graphicx}
+
+\newcommand{\mbu}{{\bf{m}}}
+\newcommand{\pbu}{{\bf{p}}}
+\newcommand{\qbu}{{\bf{q}}}
+
+\newcommand{\sbu}{{\bf{s}}}
+\newcommand{\wbu}{{\bf{w}}}
+\newcommand{\xbu}{{\bf{x}}}
+\newcommand{\ybu}{{\bf{y}}}
+\newcommand{\zbu}{{\bf{z}}}
+
+\newcommand{\nhu}{\mathcal{N}}
+\newcommand{\uu}{\mathcal{U}}
+\newcommand{\cu}{\mathcal{C}}
+\newcommand{\du}{\mathcal{D}}
+\newcommand{\lu}{\mathcal{L}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\abu}{{\bf{a}}}
+\newcommand{\abuj}{{\bf{a_j}}}
+\newcommand{\bbu}{{\bf{b}}}
+\newcommand{\vbu}{{\bf{v}}}
+\newcommand{\ubu}{{\bf{u}}}
+\newcommand{\dbu}{{\bf{d}}}
+\newcommand{\tbu}{{\bf{t}}}
+\newcommand{\cbu}{{\bf{c}}}
+\newcommand{\kbu}{{\bf{k}}}
+\newcommand{\hbu}{{\bf{h}}}
+%\newcommand{\qbu}{{\bf{q}}}
+
+\newcommand{\sstm}{\textbf{Share}_m^t}
+\newcommand{\rectm}{\textbf{Rec}_m^t}
+\newcommand{\comtm}{\textbf{Comm}^t}
+\newcommand{\vrfytm}{\textbf{SVerify}^t}
+
+\newcommand{\sstt}{\textbf{Share}_3^2}
+\newcommand{\rectt}{\textbf{Rec}_3^2}
+
+\newcommand{\comtt}{\textbf{Comm}^2}
+\newcommand{\vrfytt}{\textbf{SVerify}^2}
+
+
+\newcommand{\siml}{\texttt{Sim}}
+\newcommand{\view}{\texttt{VIEW}}
+
+%\newcommand{\C}{\mathcal{C}}
+\newcommand{\su}{\mathcal{S}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\K}{\mathcal{K}}
+
+% \newcommand{\ebu}{\textbf{E}}
+% \newcommand{\Dbu}{\textbf{D}}
+\newcommand{\ebu}{\mathcal{E}}
+\newcommand{\Dbu}{\mathcal{D}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\autenc}{\mathcal{AE}}
+
+\newcommand{\sig}{\textsf{Sig}}
+\newcommand{\vrfy}{\textsf{Vrfy}}
+
+\newcommand{\sk}{\textsf{sk}}
+\newcommand{\pk}{\textsf{pk}}
+\newcommand{\idealfnc}{{\mathcal F}}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{On the Optimization of Pippenger's Bucket Method with Precomputation} % Poster title
+
+\author{Guiwen Luo, Guang Gong} % Author(s)
+\institute{\{g27luo,\ ggong\}@uwaterloo.ca\\ Department of Electrical and Computer Engineering, University of Waterloo, Waterloo, ON, N2L3G1, CANADA} % Institution(s)
+
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+% The first column
+\begin{column}{\onecolwid} 
+
+\setbeamercolor{block title}{fg=blue,bg=white} % Change the block title color
+\begin{block}{Problem} 
+\small
+\begin{itemize}
+\item Multi-scalar Multiplication (MSM) over fixed points: 
+\begin{equation}\label{eq_multi_scalar_multiplication}
+				S_{n,r} = a_1P_1+a_2P_2+...+a_nP_n,				
+\end{equation}
+where $0\le a_i< r$ and $P_i$ are fixed points in elliptic curve group.
+\item How can we compute it efficiently for large $n:\ n\ge 2^{16}$?
+\end{itemize}
+\end{block}
+
+\begin{block}{Motivation} 
+\small
+\begin{itemize}
+	\item MSM dominates the time consumption in pairing-based zero-knowledge succinct non-interactive argument of knowledge (zkSNARK) schemes.		
+			
+	\item Circuit size in Zcash: for single SHA-256 hash, the number of multiplication gates is about 23 thousands; for nested hash, several millions.
+
+\end{itemize}
+
+%\vspace{0.25in}
+
+\begin{center}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\linewidth]{Figures/Zcash_logo}
+			\captionsetup{labelformat=empty}
+			\caption{\centering \scriptsize credit: \url{https://en.wikipedia.org/wiki/Zcash}}
+		\end{figure}
+\end{center}					
+\end{block}
+
+
+\begin{block}{Pippenger's bucket method example}
+\begin{small}
+	\begin{itemize}	
+		\item Example:
+		\begin{eqnarray*}
+		S_{13,8}=2 P_{1}+3 P_{2}+7 P_{3}+6 P_{4}+5 P_{5}+1 P_{6}+3 P_{7}\\
+		+6 P_{8}+2 P_{9}+7 P_{10}+1 P_{11}+4 P_{12}+5 P_{13}.
+		\end{eqnarray*}
+		
+		\item All points are sorted into 7 buckets with respect to the scalars $\{1, 2,\cdots, 7\}$:
+		\begin{equation*}
+		\begin{aligned}
+		S_{13,8}=& 1 \left(P_{6}+P_{11}\right)+2\left(P_{1}+P_{9}\right)+3 \left(P_{2}+P_{7}\right)+4 P_{12} \\
+		&+5\left(P_{5}+P_{13}\right)+6\left(P_{4}+P_{8}\right)+7 \left(P_{3}+P_{10}\right) \\
+		:=& 1 S_{1}+2 S_{2}+\ldots+7 S_{7}.\\
+		\end{aligned}
+		\end{equation*}					
+		\item {The accumulated sum $\Sigma_{i=1}^{7}iS_i$ can be computed via
+		\begin{equation*}
+		\begin{aligned}
+		&\ \ \ \ \  S_7 \\
+		&+ (S_7+S_6)\\
+		&+ (S_7+S_6+S_5)\\
+		&\cdots \\
+		&+(S_7+S_6+S_5+\cdots +S_1).
+		\end{aligned}
+		\end{equation*}	}			
+		
+		\item $\{S_i\}$: $13 - 7 = 6$ additions,\\
+		$\Sigma_{i = 1}^{7} iS_i$: $2\times 6 = 12$ additions. \\
+		In total, 18 additions.	
+	\end{itemize}
+\end{small}
+\end{block}
+
+
+\end{column} 
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+% The second column
+\begin{column}{\onecolwid} 
+
+\begin{block}{Pippenger's bucket method variant}
+\small
+	\begin{itemize}	
+	\item If $r$ is small enough, all $n$ points are sorted into $r-1$ buckets according to the scalars.
+%	\begin{eqnarray*}
+%	S_{n,r}= a_1P_1+a_2P_2+\cdots + a_nP_n.
+%	\end{eqnarray*}
+%	
+	\item Then MSM
+	\begin{equation*}
+	\begin{aligned}
+	S_{n,r}=& 1 S_{1}+2 S_{2}+\ldots+(r-1) S_{r-1}\\
+	=& S_{r-1} + (S_{r-1}+S_{r-2})+\cdots\\
+	&+(S_{r-1}+S_{r-2}+\cdots +S_1).
+	\end{aligned}
+	\end{equation*}
+	
+	\item $S_i$'s: $n - r + 1$ additions,\\
+	$\Sigma_{i = 1}^{r-1} iS_i$: $2\times (r-2)$ additions.\\
+	In total, $n+r -3$ additions.	
+	\end{itemize}
+			
+	\begin{itemize}	
+			\item If $r$ is big (over BLS12-381 curve, $r\approx 2^{256}$), every scalar is decomposed into its $q$-ary form,
+			\begin{eqnarray*}
+			a_i &=& a_{i,0} + a_{i,1}q +\cdots+ a_{i,h-1}q^{h-1}, \\
+			S_{n,r}&=& a_1P_1+a_2P_2+\cdots + a_nP_n\\
+			&=&\Sigma _{i=1}^n\Sigma_{j=0}^{h-1}a_{ij}\cdot (q^{j}P_i), 0 \le a_{ij}< q,\\
+			& :=& S_{nh,q}.
+			\end{eqnarray*}
+			
+			\item Precomputation ($nh$ points):
+			\begin{equation*}
+			\{q^{j}P_i\ |\ 1\le i \le n,\ 0\le j \le h-1\}. 
+			\end{equation*}
+			
+			\item By aforementioned method, all points are sorted into $q-1$ buckets.
+			In total, $S_{n,r}$ can be computed using 
+			\begin{equation*}
+			nh+ q -3
+			\end{equation*} 
+			additions.
+	\end{itemize}
+\end{block}
+
+\begin{block}{General framework}
+\small
+	\begin{itemize}	
+		\item Let us summarize the framework of computing MSM,
+		$$ S_{n,r} = S_{hn,q}=\Sigma_{i=1}^{n}\Sigma_{j=0}^{h-1} a_{ij}q^j P_i,\ 0\le a_i\le q.$$
+		
+		\item If $a_{ij} = m_{ij}b_{ij}$, $m_{ij}\in M$ (multiplier set),\\ $b_{ij}\in B$ (bucket set), then
+			\begin{equation*}
+			\begin{aligned}
+			S_{hn,q}&= \Sigma_{i=1}^{n}\Sigma_{j=0}^{h-1}b_{ij}\cdot (m_{ij}q^jP_i).\\
+			\end{aligned} 
+			\end{equation*}
+		\item Precompute ($nh|M|$ points)
+		\[ \{mq^jP_i\ |\ 1\le i\le n,0\le j\le h-1,m\in M\},\]
+		then it takes $\approx nh +|B|$ additions to compute $S_{n,r}$.
+		
+		\only {\item Pippenger's bucket method,
+		\[M =\{1\},\ B =\{0,1,2,...,q-1\}.\] 
+		$S_{n,r}$ takes $\approx nh + q$ additions.}
+		\item Pippenger's bucket method variant (notice that $-P$ can be easily computed given $P$),
+		\[M =\{1,-1\},\ B =\{0,1,2,...,\lceil q/2\rceil\}.\] 
+		$S_{n,r}$ takes $\approx nh + q/2$ additions.
+	\end{itemize}
+
+\end{block}
+\end{column} 
+
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+% The third column
+\begin{column}{\onecolwid} 
+
+\setbeamercolor{block title}{fg=red,bg=white} % Change the 
+\begin{block}{New alogorithm}
+\small
+	\textbf{Goal:} 	Construct bucket set $B$, \textit{s.t.} $|B|\approx q/\ell$. It will yield an algorithm to compute
+	 $S_{n,r}$ using $\approx hn + q/\ell$ additions.
+		
+		\begin{itemize}	
+			\item Let $q$ be a prime \textit{s.t.} \\
+			$2$ is a primitive element in $\mathbb{F}_q$.\\
+	 $\ell$ and $h$ are small positive integers \textit{s.t.}\\ $2^{\ell-1}<q$ and $q^{h-1} < r \le 2^{\ell-1} q^{h-1}$.
+			\item The multiplier set is 
+			\begin{equation*}\label{eq_multiplier_m_new}
+			M =\{2^i\ |\ 0\le i\le \ell - 1\} \cup \{-1\},
+			\end{equation*}
+			\item The corresponding bucket set ($|B|\approx q/\ell$) is
+			\begin{equation*}\label{eq_bucket_b_new}
+			B =\{i\ | \ 0\le i\le 2^{\ell-1} \} \cup
+			\{ 2^{i\cdot\ell}\bmod q\ |\ 0\le i \le \lfloor q/\ell \rfloor \}.
+			\end{equation*}
+			The idea behind the construction is that 
+			\begin{equation*}
+			\begin{aligned}
+			\{i\ |1 \le i \le q-1 \} &= \{2^i \bmod q\ | \ 0\le i \le q-2\}.
+			\end{aligned}
+			\end{equation*}	
+			
+			\item Note: Elements in the bucket set is no longer consecutive, a new accumulation algorithm is needed.		
+		\end{itemize}
+\end{block}
+
+\begin{block}{Further optimization}
+\small
+\begin{itemize}	
+		\item	Observation: 										
+		\begin{equation*}
+				\begin{aligned}
+				\{i\ |1 \le i < q \} =& \{2^i \bmod q\ | \ 0\le i \le q-2\}\\
+				 =& \{2^i \bmod q\ | \ (3-q)/2\le i \le {(q-1)}/{2}\}.
+				\end{aligned}
+		\end{equation*}	
+
+ Bucket set can be further reduced to ($|B|\approx q/(2\ell)$)
+			\begin{equation*}
+			\begin{aligned}
+			B=&\{i \mid 0 \leq i \leq 2^{\ell}\} \cup\\
+			&\{2^{i \cdot \ell} \bmod q \mid 0 \leq i \leq\lfloor(q-1) / 2 \ell\rfloor\}.
+			\end{aligned}
+			\end{equation*}
+			
+		\item GLV endomorphism 
+		\[\lambda P = \lambda\cdot (x,y) = (\xi x, y),\  \lambda^3=1\in \mathbb{F}_r, \xi^3=1 \in \mathbb{F}_p,\]			
+		where $\lambda \approx \sqrt{r}$, every scalar 
+		$a = a_0 + a_1\lambda,$	so			
+		\[S_{n,r} = S_{2n,\lambda}.\]	
+		It further reduces the precomputation by a factor of 2.
+		
+%				\item<3-> Those two techniques can approximately shrink down the precomputation by a factor of 4.
+	\end{itemize}
+\end{block}
+
+\begin{block}{Conclusion}
+\small
+\textbf{Conclusion:} $S_{n,r}$ over fixed points can be computed using at most approximately
+								\begin{equation}
+								nh + q/(2\ell)
+								\end{equation}
+								additions, with the help of $\ell nh$ precomputed points
+								\begin{equation*}
+								\{mq^jP_i\ |\ 1\le i\le n,0\le j\le h-1,m\in \{1,2,...,2^{\ell-1}\}\},
+								\end{equation*}	
+			where $h = \lceil \log_q r\rceil$, and $q$ is a prime selected to minimize the cost.
+\end{block}
+
+\setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
+
+
+\end{column} % End of the third column
+
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+% The fourth column
+\begin{column}{\onecolwid} 
+
+\setbeamercolor{block title}{fg=blue,bg=white} 
+\begin{block}{Instantiation}
+\small
+
+The instantiation is done over the elliptic curve group of order $r = 2^{256}$. Some comparisons against Pippenger's bucket method and its variant are presented in the following tables.
+$\newline$
+\begin{table}[H]
+\renewcommand*{\arraystretch}{1.1}
+\centering
+\captionsetup{labelformat=empty}
+\caption{Comparison of methods that computes $S_{n,r}$}
+%\resizebox{\columnwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+{Method}   & {Storage} & {Worst case cost} \\ \hline \hline
+
+Pippenger   \cite{bernstein2012faster}      &      $n\cdot P$       &            $h(n+q/2)\cdot A$         \\ \hline
+Pippenger variant \cite{brickell1995fast}  &    $ nh\cdot P$             &   $(nh+q/2)\cdot A$             \\ \hline \hline
+Our algorithm&    $ \ell nh\cdot P$             &   $\left(nh+q/ (2\ell)\right)\cdot A$             \\ \hline
+\end{tabular}%
+\label{table_methods_comparison}
+\end{table}
+$\newline$
+\begin{table}[H]
+\centering
+\captionsetup{labelformat=empty}
+\caption{Radix $q$ employed by different methods}
+\renewcommand*{\arraystretch}{1.1}
+%\resizebox{\columnwidth}{!}{
+\begin{tabular}{c|c|c|c}
+\hline
+$n$                   & Pippenger          & Pippneger variant  & Our method \\ \hline
+$2^{16}$ &              $2^{13}$           &         $2^{17}$               &       $2^{18}- 5$          \\ \hline
+$2^{17}$ &              $2^{14}$           &         $2^{18}$             &       $2^{21}-19$             \\ \hline
+$2^{18}$ &              $2^{15}$           &         $2^{19}$                &       $2^{21}-19$             \\ \hline
+$2^{19}$ &              $2^{17}$           &         $2^{20}$              &       $2^{21}-21$             \\ \hline
+$2^{20}$ &              $2^{18}$           &         $2^{20}$             &       $2^{23}-21$             \\ \hline
+\end{tabular}
+%}
+\label{table_the_q}
+\end{table}
+$\newline$
+\begin{table}[H]
+\renewcommand*{\arraystretch}{1.1}
+\centering
+\captionsetup{labelformat=empty}
+\caption{Number of additions taken to compute $S_{n,r}$} 
+%\resizebox{1.0\columnwidth}{!}{
+\begin{tabular}{c|c|c|c}
+\hline
+$n$          & Pippenger  & Pippenger variant  & Our method \\ \hline
+$2^{16}$ &           $1.39\times 10^6$        &      $1.11\times 10^6$            &      $ 1.00\times 10^6 $        \\ \hline
+
+$2^{17}$ &            $2.65\times 10^6$       &         $2.10\times 10^6$         &       $ 1.88\times 10^6 $           \\ \hline
+
+$2^{18}$ &               $5.01\times 10^6$    &         $3.93\times 10^6$       &      $ 3.58\times 10^6 $            \\ \hline
+
+$2^{19}$ &                   $9.44\times 10^6$    &     $7.34\times 10^6$           &       $ 6.99\times 10^6 $         \\ \hline
+
+$2^{20}$ &           $1.77\times 10^7$       &          $1.42\times 10^7$            &      $ 1.33\times 10^7 $        \\ \hline
+\end{tabular}
+%}
+\label{table_number_of_additions_required}
+\end{table}
+
+\end{block}
+
+\begin{block}{Acknowledgements}
+\footnotesize	
+[1] This work is supported by NSERC SPG and Ripple University Research.
+
+[2] Chenkai Weng provides us useful advice about the construction.
+\end{block}
+
+
+\begin{block}{References}
+\scriptsize
+\bibliographystyle{splncs04}
+\begin{thebibliography}{8}
+\bibitem{bernstein2012faster}
+Daniel~J Bernstein, Jeroen Doumen, Tanja Lange, and Jan-Jaap Oosterwijk.
+\newblock Faster batch forgery identification.
+\newblock In {\em International Conference on Cryptology in India}, pages
+  454--473. Springer, 2012.
+
+\bibitem{brickell1995fast}
+Ernest~F Brickell, Daniel~M Gordon, Kevin~S McCurley, and David~B Wilson.
+\newblock Fast exponentiation with precomputation: algorithms and lower bounds.
+\newblock {\em preprint, Mar}, 27, 1995.
+\end{thebibliography}
+
+\end{block}
+
+\end{column} 
+\end{columns} % End of all the columns in the poster
+\end{frame} % End of the enclosing frame
+
+\end{document}
